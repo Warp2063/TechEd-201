@@ -9,4 +9,5 @@ Today, we:
   - the origins of the internet
   - Brendan Eich
   - the origins of JavaScript
+- learned how to make the special GitHub repository with a bio
 - watched a brief video about how the internet works
