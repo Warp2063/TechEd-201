@@ -1,6 +1,6 @@
 # Readme file for Class 01
 
-Today, we:
+On February 6, 2023, we:
 
 - reviewed what we covered in course 102
 - created a simple HTML/CSS/JS demonstration based on our knowledge
