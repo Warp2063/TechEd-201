@@ -4,6 +4,7 @@ Today, we:
 
 - reviewed what we covered in course 102
 - created a simple HTML/CSS/JS demonstration based on our knowledge
+- created this repository
 - talked about:
   - the origins of the internet
   - Brendan Eich
