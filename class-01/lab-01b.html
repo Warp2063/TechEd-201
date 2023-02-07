@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: black;
+                font-size: 25px;
+
+            }
+        </style>
+    </head>
+
+
+    <!--
+        1. create four prompts
+        2. each prompt should ask your name, age, country and fav color respectively
+        3. Create a LIST in your html
+        4. This list should contain four list items with name, age, country and fav color
+        5. the values you enter in your prompt should be rendered in the frontend and the text color should be the fav color you entered
+    -->
+    <body>
+        
+        <ul id="theList">
+            <li id="name">Name</li>
+            <li id="age">Age</li>
+            <li id="country">Country</li>
+            <li id="favColor">Favorite Color</li>
+        </ul>
+
+        <button onclick="getInputs()">Click to set values</button>
+        
+        <script>
+            function getInputs() {
+                document.getElementById("name").innerHTML = prompt("What's your name?");
+                document.getElementById("age").innerHTML = prompt("What's your age?");
+                document.getElementById("country").innerHTML = prompt("What country do you live in?");
+                document.getElementById("favColor").innerHTML = prompt("What's your favorite color?");
+
+                document.getElementById("theList").style.color = document.getElementById("favColor").innerHTML;
+            }
+        </script>
+    </body>
+</html>

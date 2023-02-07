@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+        body {
+            background-color: orange;
+        }
+
+        #exampleText {
+            color: green;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <p id="exampleText" onmouseenter="onHoverHandler()" onmouseleave="onMouseOut()">Here is some example text.</p>
+
+    <script>
+        var colors = ["red", "green", "blue", "purple", "cyan", "black"];
+        var colorNum = 0;
+
+        function onHoverHandler() {
+            cycleColor();
+        }
+
+        function onMouseOut() {
+            document.getElementById("exampleText").style.color = "green";
+            document.getElementById("exampleText").style.backgroundColor = "orange";
+        }
+
+        function cycleColor() {
+            console.log("Set name color to: " + colors[colorNum % colors.length]);
+            document.getElementById("exampleText").style.color = colors[colorNum % colors.length];
+            document.getElementById("exampleText").style.backgroundColor = colors[(colorNum + 1) % colors.length];
+            colorNum++;
+        }
+    </script>
+  </body>
+</html>
