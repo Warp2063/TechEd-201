@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            body {
+                background-color: black;
+            }
+
+            #title {
+                font-size: 40px;
+                color: goldenrod;
+            }
+
+            #classmates {
+                font-size: 30px;
+                color: aquamarine;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="title">Members of the Class!</p>
+        <button onclick="addStudent()">Click to add a Student</button>
+        <ul id="classmates"></ul>
+
+        <script>
+            var classmates = []; // an empty array
+
+            function addStudent() {
+                let classmate = prompt("Enter new classmate name:");
+                if (classmate == null || classmate.length == 0) {
+                    console.log("Did not add anything.");
+                    return;
+                }
+                else {
+
+                    if(classmate.toLowerCase() == 'jez') {
+                        classmates.push("Jez, our scion from the morning class!");
+                    }
+                    else {
+                        classmates.push(classmate);
+                    }
+                    
+                    document.getElementById("classmates").innerHTML = buildStudentList(classmates, 0);
+                    //alert("Welcome, " + classmate + "!");
+                    console.log("Added " + classmate);
+                    console.log("Classmate list: " + classmates.toString());
+                }
+            }
+
+            // recursion is fine for small arrays, but this will get unwieldly/performance heavy with large ones.
+            function buildStudentList(array, index) {
+                if(index < array.length) {
+                    return "<li>" + array[index] + "</li>" + buildStudentList(array, (index + 1));
+                }
+                else {
+                    return "";
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
