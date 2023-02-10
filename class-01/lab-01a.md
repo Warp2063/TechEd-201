@@ -1,17 +1,18 @@
 # Code for lab-01a
 
 **Task:**
+
 1. Create a github repo and name it as teched-201
 2. Create a sub-repo and name it as class-01
 3. Create two files
 4. Name one file as readme.md
-5. Name a second file as lab-01a.md 
+5. Name a second file as lab-01a.md
 
 ## Version 1
 
 ***
 
-```
+```html
 <!DOCTYPE html>
 <html>
 

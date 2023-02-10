@@ -38,15 +38,34 @@ Useful commands:
 
 Other important ones:
 
-* ```mv``` = *move a file*
-* ```rm <filename>``` = *remove a file permanently. **Warning: there is no recovery!***
-* ```cp <source> <destination>``` = *copy a file*
+- ```mv``` = *move a file*
+- ```rm <filename>``` = *remove a file permanently. **Warning: there is no recovery!***
+- ```cp <source> <destination>``` = *copy a file*
 
 <br>
 During class, I created a simple page using prompts (sans error checking) to demonstrate competency in getting inputs via browser prompts, and updating list contents based on the inputs.
 
 <br>
 
-- [lab-01b.md](https://github.com/Warp2063/TechEd-201/blob/main/class-01/lab-01b.md)
+### Labs
 
+- [lab-01b.md](https://github.com/Warp2063/TechEd-201/blob/main/class-01/lab-01b.md)
+  - Use an event listener and handler on a button to get inputs via prompts to the user.
+  - Change inner HTML and style based on the inputs.
 - [lab-01b.html](https://github.com/Warp2063/TechEd-201/blob/main/class-01/lab-01b.html)
+  - Version 1
+
+***
+
+## Other
+
+- [sampleColorDemo.html](./sampleColorDemo.html)
+  - With zero error checking, takes a color for the foreground and the background and applies them.
+  - Not sure if this was a lab.
+- [colorDemo2.html](./colorDemo2.html)
+  - An onmouseenter listener watches for that as input, and cycles through some predefined display colors.
+  - An onmouseleave listener returns the colors to normal.
+
+***
+
+[Return to TechEd-201 ReadMe](../README.md)
