@@ -9,11 +9,11 @@
 
 ### Feb 8 Labs
 
-- [Lab-02a ReadMe](./lab-02a.md)
+- [Lab-02a ReadMe](/code/lab-02a/lab-02a.md)
   - Use event listeners on buttons to trigger a series of question prompts about the user, and use conditionals to react to specific predefined inputs.
-- [Lab-02a-v1.html](./lab-02a-v1.html)
+- [Lab-02a-v1.html](/code/lab-02a/lab-02a-v1.html)
   - Version 1
-- [Lab-02a-v2.html](./lab-02a-v2.html)
+- [Lab-02a-v2.html](/code/lab-02a/lab-02a-v2.html)
   - Version 2 - Some refactoring and tidying of the CSS
 
 ***
@@ -30,18 +30,18 @@ On my own, I researched:
 
 ### Feb 9 Labs
 
-- [Lab-02b ReadMe](./lab-02b.md)
+- [Lab-02b ReadMe](/code/lab-02b/lab-02b.md)
   - Number Guessing Game using event listeners/handlers on a button.
-- [Lab-02b.html](./lab-02b.html)
+- [Lab-02b.html](/code/lab-02b/lab-02b.html)
   - Version 1
 
 ***
 
 ## Other
 
-- [arrayPush.html](./arrayPush.html)
+- [arrayPush.html](/code/other/arrayPush.html)
   - Can't remember whether this was an assignment, but it accepts prompts, adding students to an array.  It also has a special response for a specific input.
 
 ***
 
-[Return to TechEd-201 ReadMe](../README.md)
+[Return to TechEd-201 ReadMe](/README.md)

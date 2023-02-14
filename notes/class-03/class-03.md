@@ -9,13 +9,11 @@ When a client comes to you with a task:
 - Collect **User Stories**, or Ideas to find use cases from different types of users.
 - Rank the importance of the different features defined by the User Stories
 - Select the most important features  
-
-<br>
-
+  
 - **Padding** is the space between the **border** and the content.
 - **Margin** is the space between the **border** and neighboring content's margin.
 
-<br>
+***
 
 - Responsive Design
 
@@ -65,10 +63,9 @@ When a client comes to you with a task:
 
 ## Feb 10 Assignments and Labs
 
-- [Photography Site Wireframe](./PhotographySiteWireframe.jpg)
-
-- [photosite.html](./photosite.html) - My edits of V's photo site
-- [VPhotoSite.html](./VPhotoSite.html) - The same site, but V's original code.
+- [Photography Site Wireframe Image](/code/photosite/PhotographySiteWireframe.jpg)
+- [photosite.html](/code/photosite/photosite.html) - My edits of V's photo site
+- [VPhotoSite.html](/vcode/VPhotoSite.html) - The same site, but V's original code.
 
 ***
 
@@ -80,4 +77,4 @@ When a client comes to you with a task:
 
 ***
 
-[Return to TechEd-201 ReadMe](../README.md)
+[Return to TechEd-201 ReadMe](/README.md)
