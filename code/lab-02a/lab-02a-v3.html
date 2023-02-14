@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- This is an extension of lab-01a.html -->
+
+<!--
+    1. create four prompts
+    2. each prompt should ask your name, age, country and fav color respectively
+    3. Create a LIST in your html
+    4. This list should contain four list items with name, age, country and fav color
+    5. the values you enter in your prompt should be rendered in the frontend and the text color should be the fav color you entered
+-->
+<!--
+    New tasks:
+    1. Paste your yesterdays code into your replit or vscode
+    2. Create a second click event handler and listener
+    3. Now, when the click event happens we need to get four prompts -> education, favorite programming language, future dream role, holiday destination
+    4. Now, when someone enters the favorite language of their own choice they needs to get an alert saying hey you have selected the favorite language....
+    5. After all the prompts are done render that to the frontend.
+-->
+
+<!--
+    Potential future improvements:
+    Input checking
+    Refactor question strings as a string array, and prompts as either a loop and possibly a function that does the input checking
+-->
+
+
+<html>
+    <head>
+        <style>
+            #header {
+                color: white;
+                font-size: 60px;
+                font-family: 'Segoe Script', Tahoma, Geneva, Verdana, sans-serif
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: white;
+                font-size: 25px;
+                background-image: linear-gradient(to bottom right, purple, rgb(148, 46, 134));
+                border: 30px solid white;
+                border-radius: 10px;
+                background-repeat: no-repeat;
+                height: 100%;
+            }
+
+            ul {
+                max-width: 50%;
+                min-width: 200 px;
+            }
+
+            li {
+                list-style: none;
+                margin: 8px;
+            }
+
+            button {
+                margin: 8px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="header">Facts About Me</p>
+
+        <ul id="bioInfo">
+            
+            <li id="name">Name</li>
+            <li id="age">Age</li>
+            <li id="country">Country</li>
+            <li id="favColor">Favorite Color</li>
+            
+        </ul>
+        
+
+        <button onclick="getBioInputs()">Set personal info</button>
+        <button onclick="getPrefInputs()">Set personal prefs</button>
+        
+        <script>
+            const bioQuestions = ["What's your name?", "What's your age?", "What country do you live in?", "What's your favorite color?"];
+            const prefQuestions = ["What's your education level?", "What's your favorite programming language?", 
+                                    "What's your future dream role?", "What's your preferred holiday destination?"];
+            let bioAnswers = [], prefAnswers = [];
+            console.log(bioAnswers.concat(prefAnswers));
+
+            function getBioInputs() {
+                bioAnswers = [];
+                for(let i = 0; i < bioQuestions.length; i++) {
+                    bioAnswers.push( promptQuestion(bioQuestions[i]), true );
+                }
+
+                document.getElementById("bioInfo").style.color = bioAnswers[bioAnswers.length - 1];
+                document.getElementById("bioInfo").innerHTML = buildHtmlList(bioAnswers.concat(prefAnswers));
+            }
+
+            function getPrefInputs() {
+
+                prefAnswers = [];
+                prefAnswers.push( promptQuestion(prefQuestions[0]), true );
+                prefAnswers.push( promptQuestion(prefQuestions[1]), true );
+                
+                if(bioAnswers.length > 0 && bioAnswers[0].toLowerCase() == 'carla') {
+                    alert("Hi, Carla!  You've set your favorite programming language to " + prefAnswers[prefAnswers.length - 1] + ".");
+                }
+
+                prefAnswers.push( promptQuestion(prefQuestions[2]), true );
+                prefAnswers.push( promptQuestion(prefQuestions[3]), true );
+
+                document.getElementById("theList").innerHTML = buildHtmlList( bioAnswers.concat(prefAnswers) );
+            }
+
+            
+            function buildHtmlList(array) {
+                let output = "";
+                for(let i = 0; i < array.length; i++) {
+                    output += "<li>" + array[i] + "</li>";
+                }
+                return output;
+            }
+
+            function promptQuestion(questionStr) {
+
+                let response = prompt(questionStr);
+
+                while (true && (response == null || response == '')) {
+                    prompt("A response is required.\n" + questionStr);
+                }
+                return response;
+            }
+
+        </script>
+    </body>
+</html>

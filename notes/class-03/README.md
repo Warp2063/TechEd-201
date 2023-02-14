@@ -60,13 +60,23 @@ When a client comes to you with a task:
         </style>
     </head>
     ```
+
 - [Flat UI Colors](https://flatuicolors.com/) - A site for picking color schemes
 
 ## Feb 10 Assignments and Labs
 
-[Photography Site Wireframe](./PhotographySiteWireframe.jpg)
+- [Photography Site Wireframe](./PhotographySiteWireframe.jpg)
+
+- [photosite.html](./photosite.html) - My edits of V's photo site
+- [VPhotoSite.html](./VPhotoSite.html) - The same site, but V's original code.
 
 ***
+
+## February 13, 2023
+
+- Talked a bit about assignment operators vs. comparison operators.
+- Talked about CSS styling and good UI/UX practices
+  - To this end, we went back to lab-02a and worked to improve the styling
 
 ***
 
