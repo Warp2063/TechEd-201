@@ -65,7 +65,7 @@
             function getBioInputs() {
                 bioAnswers = [];
                 for(let i = 0; i < bioQuestions.length; i++) {
-                    bioAnswers.push( promptQuestion(bioQuestions[i]), true );
+                    bioAnswers.push( promptQuestion(bioQuestions[i], true) );
                 }
 
                 document.getElementById("bioInfo").style.color = bioAnswers[bioAnswers.length - 1];
@@ -75,17 +75,17 @@
             function getPrefInputs() {
 
                 prefAnswers = [];
-                prefAnswers.push( promptQuestion(prefQuestions[0]), true );
-                prefAnswers.push( promptQuestion(prefQuestions[1]), true );
+                prefAnswers.push( promptQuestion(prefQuestions[0], true) );
+                prefAnswers.push( promptQuestion(prefQuestions[1], true) );
                 
                 if(bioAnswers.length > 0 && bioAnswers[0].toLowerCase() == 'carla') {
                     alert("Hi, Carla!  You've set your favorite programming language to " + prefAnswers[prefAnswers.length - 1] + ".");
                 }
 
-                prefAnswers.push( promptQuestion(prefQuestions[2]), true );
-                prefAnswers.push( promptQuestion(prefQuestions[3]), true );
+                prefAnswers.push( promptQuestion(prefQuestions[2], true) );
+                prefAnswers.push( promptQuestion(prefQuestions[3], true) );
 
-                document.getElementById("theList").innerHTML = buildHtmlList( bioAnswers.concat(prefAnswers) );
+                document.getElementById("bioInfo").innerHTML = buildHtmlList( bioAnswers.concat(prefAnswers) );
             }
 
             
@@ -97,17 +97,25 @@
                 return output;
             }
 
-            function promptQuestion(questionStr) {
-                return promptQuestion(questionStr, false);
-            }
-
+            
+            /**
+             * 
+             */
             function promptQuestion(questionStr, mustAnswer) {
-                let response = prompt(questionStr);
+                if(typeof questionStr === "string") {
+                    let response = prompt(questionStr);
 
-                while (mustanswer && (response == null || response == '')) {
-                    prompt("A response is required.\n" + questionStr);
+                    if(mustAnswer === true) {
+                        while (response === null || response == '') {
+                            response = prompt("A response is required.\n" + questionStr);
+                        }
+                    }
+
+                    return response;
                 }
-                return response;
+                else {
+                    return null;
+                }
             }
 
         </script>

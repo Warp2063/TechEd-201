@@ -1,5 +1,7 @@
 # Readme file for Class 01
 
+Github, JS functions, prompts and alerts
+
 ## February 6, 2023
 
 Today, we:

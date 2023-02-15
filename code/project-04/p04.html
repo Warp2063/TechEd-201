@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Getter/Setter Demo</title>
+
+        <style>
+            
+        </style>
+    </head>
+
+    <!--
+        1. Create  a setter function to set a score in rugby
+        2. Create a setter function to set a score in football.
+        3. Create a getter function to get the score of rugby
+        4. Create a getter function to get the score of football
+    -->
+
+    <body>
+
+        <button onclick="setFootballScore()">Set football score</button>
+        <button onclick="getFootballScore()">Show football score</button>
+        <button onclick="setRugbyScore()">Set rugby score</button>
+        <button onclick="getRugbyScore()">Show rugby score</button>
+        
+
+        <script>
+            var footballScore = 0;
+            var rugbyScore = 0;
+
+            function getFootballScore() {
+                console.log("The football score is ", footballScore);
+            }
+
+            function setFootballScore() {
+                footballScore = Number.parseInt(prompt("Enter the football score"));
+            }
+
+            function getRugbyScore() {
+                console.log("The rugby score is ", rugbyScore);
+            }
+
+            function setRugbyScore() {
+                rugbyScore = Number.parseInt(prompt("Enter the rugby score"));
+            }
+        </script>
+    </body>
+</html>

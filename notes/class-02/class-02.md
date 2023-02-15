@@ -1,5 +1,7 @@
 # Class 2 ReadMe
 
+For loops, if-else statements and CSS styling
+
 ## February 8, 2023
 
 ### Notes

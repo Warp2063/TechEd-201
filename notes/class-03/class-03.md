@@ -1,5 +1,7 @@
 # Class 3 ReadMe
 
+Number guessing game, CSS box model --> margin, padding, border
+
 ## February 10, 2023
 
 ## Notes
