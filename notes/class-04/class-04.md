@@ -33,4 +33,18 @@ Today we:
   
 **
 
+## February 16, 2023
+
+- CSS positioning, cont.
+- **Viewport** - The portion of the page that can be seen on-screen.
+- Relative & Absolute, Fixed & Sticky, Static
+- Every element is ```static``` by default, and has no definable position.
+- ```relative``` is relative to the page.
+  - The page has a top and left but is infinite to the bottom and right, so defining relative to bottom or right makes no sense and does not work.
+- ```fixed``` elements are relative to the viewport.
+  - The viewport has a finite and known top, bottom, left, and right, so you can define the element's position in relation to these.
+- [Example 1](./example.html)
+- [Example 2](./example2.html)
+- [Adobe Color Analyzer](https://color.adobe.com/create/color-contrast-analyzer)
+
 [Return to TechEd-201 ReadMe](/README.md)
