@@ -10,56 +10,55 @@ When a client comes to you with a task:
 
 - Collect **User Stories**, or Ideas to find use cases from different types of users.
 - Rank the importance of the different features defined by the User Stories
-- Select the most important features  
-  
+- Select the most important features
 - **Padding** is the space between the **border** and the content.
 - **Margin** is the space between the **border** and neighboring content's margin.
 
-***
+---
 
 - Responsive Design
 
 - ```html
-    <style>
-        img {
-            height:200px;
-            width:200px;
-        }
-    </style>
-    ```
+  <style>
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  </style>
+  ```
 
 - ```html
-    <input type="text"/>
-    ```
+  <input type="text" />
+  ```
 
 - Sample
 
-    ```html
-    <head>
-        <style>
-            #main {
-                border: 5px solid white;
-                background-color: turquoise;
-                text-align: center;
-            }
-            #features-section {
-                border-style: 5px solid white;
-                text-align: center;
-                width: 25%;
-                float: right;
-                margin-top: -80px;
-            }
+  ```html
+  <head>
+    <style>
+      #main {
+        border: 5px solid white;
+        background-color: turquoise;
+        text-align: center;
+      }
+      #features-section {
+        border-style: 5px solid white;
+        text-align: center;
+        width: 25%;
+        float: right;
+        margin-top: -80px;
+      }
 
-            input {
-                border: none;
-                padding: 10px;
-                color: green;
-                font-family: salmon;
-                font-weight: bolder;
-            }
-        </style>
-    </head>
-    ```
+      input {
+        border: none;
+        padding: 10px;
+        color: green;
+        font-family: salmon;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  ```
 
 - [Flat UI Colors](https://flatuicolors.com/) - A site for picking color schemes
 
@@ -69,7 +68,7 @@ When a client comes to you with a task:
 - [photosite.html](/code/photosite/photosite.html) - My edits of V's photo site
 - [VPhotoSite.html](/vcode/VPhotoSite.html) - The same site, but V's original code.
 
-***
+---
 
 ## February 13, 2023
 
@@ -77,6 +76,6 @@ When a client comes to you with a task:
 - Talked about CSS styling and good UI/UX practices
   - To this end, we went back to lab-02a and worked to improve the styling
 
-***
+---
 
 [Return to TechEd-201 ReadMe](/README.md)

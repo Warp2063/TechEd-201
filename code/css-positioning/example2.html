@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+      }
+
+      div {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        margin: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--typically go clockwise for directions for readability-->
+    <div
+      id="header"
+      style="
+        position: fixed;
+        top: 0px;
+        bottom: calc(100vh - 50px);
+        left: 0px;
+        right: 0px;
+
+        background-color: aquamarine;
+      ">
+      Header
+    </div>
+
+    <div
+      id="side"
+      style="
+        position: fixed;
+        top: 50px;
+        bottom: 50px;
+        left: 0px;
+        right: calc(100% - 150px);
+        opacity: 50%;
+        background-color: rgb(3, 175, 3);
+      ">
+      Side
+    </div>
+
+    <div
+      id="main"
+      style="
+        position: fixed;
+        top: 50px;
+        bottom: 50px;
+        left: 150px;
+        right: 0px;
+
+        opacity: 50%;
+        background-color: yellow;
+      ">
+      Main
+
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          width: 60px;
+          height: 60px;
+          margin: 30px;
+          background-color: red;
+        "></div>
+
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 160px;
+          width: 60px;
+          height: 60px;
+          margin: 30px;
+          background-color: red;
+        "></div>
+
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 290px;
+          width: 60px;
+          height: 60px;
+          margin: 30px;
+          background-color: red;
+        "></div>
+    </div>
+
+    <div
+      id="footer"
+      style="
+        position: fixed;
+        width: 100%;
+        top: calc(100vh - 50px);
+        left: 0px;
+        right: 15px;
+        bottom: 0px;
+        opacity: 50%;
+        background-color: pink;
+      ">
+      Footer
+    </div>
+  </body>
+</html>
