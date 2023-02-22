@@ -1,0 +1,115 @@
+# Lab-06
+
+## Task
+
+1. Create 10 elements with different ids
+2. Create a button with event handler and event listener
+3. When someone clicks the button all the innerHTML and also all the styles should change
+
+## Version 1
+
+Fulfills all requirements, demonstrating programatic manipulation of the DOM via Javascript, inserting elements and adjusting both their text and CSS color styling upon each button click. Also demonstrates usage of both innerText and innerHTML.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: rgb(0, 0, 70);
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+      }
+
+      button {
+        margin: 30px;
+        padding: 5px;
+        color: rgb(0, 0, 70);
+        background-color: teal;
+        font-size: 20px;
+        border: 3px solid goldenrod;
+        border-radius: 20px;
+      }
+
+      div {
+        margin: 5px;
+      }
+
+      #container {
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <!--
+        1. Create 10 elements with different ids
+        2. Create a button with event handler and event listener
+        3. When someone clicks the button all the innerHTML and also all the styles should change
+    -->
+  <body>
+    <button onclick="changeTextAndColors()">Click Me!</button>
+    <br />
+    <div id="container"></div>
+
+    <script>
+      const colors = [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "violet",
+        "aqua",
+        "orange",
+      ];
+
+      var clickCount = 0;
+
+      setup(); // call initial setup
+
+      /**
+       * Creates ten div elements and puts them in the container element, then
+       * calls changeStylesAndColors() to format them.
+       */
+      function setup() {
+        let temp = [];
+        for (var i = 0; i < 10; i++) {
+          temp.push(`<div id=\"div${i}\"></div>`);
+        }
+
+        document.getElementById("container").innerHTML = "".concat(...temp);
+        changeTextAndColors();
+      }
+
+      /**
+       * Sets the colors and innerText of the elements inside container.  Increments clickCount.
+       */
+      function changeTextAndColors() {
+        let children = document.getElementById("container").children;
+
+        // for each child element in container
+        for (var i = 0; i < children.length; i++) {
+          // set the color from the colors array
+          children[i].style.color =
+            colors[(children.length - i - 1 + clickCount) % colors.length];
+
+          // set the innerText from the colors array
+          children[i].innerText =
+            colors[(children.length - i - 1 + clickCount) % colors.length];
+
+          // adjust whether it's uppercase or lowercase, for fun
+          if ((clickCount + i) % 2 == 0) {
+            children[i].innerText = children[i].innerText.toLowerCase();
+          } else {
+            children[i].innerText = children[i].innerText.toUpperCase();
+          }
+        }
+
+        clickCount++;
+      }
+    </script>
+  </body>
+</html>
+```
