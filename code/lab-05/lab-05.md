@@ -15,7 +15,7 @@
 3. Good and clean code
 4. Good naming of variables and functions
 
-## Questions
+## Example Questions
 
 ### Biographical
 
@@ -30,3 +30,399 @@
 2. Your fav movie
 3. Your fav language
 4. Your fav country
+
+---
+
+## Version 1
+
+Functionally the same as lab-02a, this lab put more focus on CSS positioning, with a side emphasis on making things look good. Due to struggles with CSS positioning, I chose to limit the page to 1000px wide in order to alleviate struggles with dynamic resizing. I also took the oppportunity to begin exploring objects and also used Maps, observing the differences in iterating through key-value pairings in for loops.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lab-05</title>
+    <style>
+      div {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #title {
+        font-size: xx-large;
+        font-weight: bolder;
+        text-align: center;
+        color: #ffb703;
+        text-shadow: 1px 1px #fb8500;
+        margin: 25px;
+      }
+
+      #fancy {
+        font-family: "Lucida Handwriting";
+      }
+
+      button {
+        border-radius: 10px;
+        width: 120px;
+        margin: 15px;
+        margin-top: 30px;
+        background-color: #ffb703;
+        border: 2px solid #fb8500;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: lighter;
+      }
+
+      img {
+        max-width: 150px;
+        max-height: 150px;
+        padding: 5px;
+        border: 3px double #023047;
+        border-radius: 10px;
+        margin: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      ul li {
+        border: 3px double #023047;
+        padding: 5px;
+        max-width: 350px;
+      }
+
+      li.question {
+        color: #023047;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: none;
+      }
+
+      li.response {
+        color: #219ebc;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-left: 15px;
+        border-top: none;
+        margin-bottom: 5px;
+      }
+
+      #header {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100px;
+        width: 1000px;
+        background-color: #023047;
+      }
+
+      #side {
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 149px;
+        height: 600px;
+        background-color: #219ebc;
+        border-right: 1px solid #023047;
+      }
+
+      #main {
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        width: 850px;
+        height: 600px;
+        background-color: #8ecae6;
+      }
+
+      #infopane {
+        position: relative;
+        float: left;
+        width: 400px;
+        padding: auto;
+      }
+
+      #infopaneplaceholder {
+        color: #023047;
+        transform: scale(3) rotate(-60deg) translateX(45px) translateY(50px);
+      }
+
+      #photopane {
+        position: relative;
+        float: left;
+        padding: auto;
+        padding-left: 20px;
+        padding-top: 70px;
+        max-width: 430px;
+      }
+
+      #img2 {
+        filter: hue-rotate(270deg);
+      }
+
+      #img3 {
+        filter: hue-rotate(90deg);
+      }
+
+      #img4 {
+        filter: hue-rotate(180deg);
+      }
+
+      #footer {
+        position: absolute;
+        top: 700px;
+        width: 1000px;
+        margin: auto;
+        text-align: center;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="side">
+      <button onclick="setBio()">Set Info</button>
+      <br />
+      <button onclick="setPrefs()">Set Prefs</button>
+    </div>
+
+    <div id="main">
+      <div id="infopane">
+        <div id="infopaneplaceholder">Infopane Placeholder</div>
+      </div>
+
+      <div id="photopane">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
+          id="img1" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
+          id="img2" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
+          id="img3" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
+          id="img4" />
+      </div>
+    </div>
+
+    <div id="footer">Copyright by &lt;Your Name&gt;</div>
+
+    <div id="header">
+      <div id="title">
+        <span id="titlename">Your Name</span> -
+        <span id="fancy">A Fancy Project Name</span>
+      </div>
+    </div>
+
+    <script>
+      const bioQuestions = {
+        name: "What is your name?",
+        age: "How old are you?",
+        birthplace: "Where were you born?",
+        color: "What's your favorite color?",
+      };
+
+      const prefQuestions = {
+        sport: "What's your favorite sport?",
+        movie: "What's your favorite movie?",
+        lang: "What's your favorite language?",
+        vacation: "What's your favorite vacation spot?",
+      };
+
+      var bioResponses = new Map();
+      var prefResponses = new Map();
+
+      /**
+       * Quickly populates the responses and updates the page;
+       * useful for rapidly-testing CSS adjustments.
+       */
+      function demosetup() {
+        bioResponses.set("name", "Carla");
+        bioResponses.set("age", "nope");
+        bioResponses.set("birthplace", "Illinois");
+        bioResponses.set("color", "purple");
+        prefResponses.set("sport", "soccer");
+        prefResponses.set("movie", "The Martian");
+        prefResponses.set("lang", "Japanese");
+        prefResponses.set("vacation", "The Moon");
+
+        document.getElementById("titlename").innerText =
+          bioResponses.get("name");
+        document.title = bioResponses.get("name");
+        document.getElementById("infopane").innerHTML = getList();
+      }
+
+      /**
+       * Using prompts, queries the user for personal information (but does not require it).
+       * Updates the infopane with the questions/responses.
+       */
+      function setBio() {
+        // build temporary Map; only if answers are given do we add it to bioAnswers
+        let tempResponses = new Map();
+
+        for (const key in bioQuestions) {
+          // set key from question as key for answer
+          let temp = promptQuestion(bioQuestions[key], false);
+          if (temp != null && temp != "") {
+            tempResponses.set(key, temp);
+          }
+        }
+
+        if (tempResponses.size > 0) {
+          bioResponses = tempResponses;
+        }
+
+        // if name was input, set document.title and titlename
+        if (bioResponses.has("name")) {
+          document.getElementById("titlename").innerText =
+            bioResponses.get("name");
+          document.title = bioResponses.get("name");
+        }
+
+        document.getElementById("infopane").innerHTML = getList();
+      }
+
+      /**
+       * Using prompts, queries the user for personal preferences (but does not require it).
+       * Updates the infopane with the questions/responses.
+       */
+      function setPrefs() {
+        // build temporary Map; only if answers are given do we add it to prefAnswers
+        let tempResponses = new Map();
+
+        for (const key in prefQuestions) {
+          // set key from question as key for answer
+          let temp = promptQuestion(prefQuestions[key], false);
+          if (temp != null && temp != "") {
+            tempResponses.set(key, temp);
+          }
+        }
+
+        if (tempResponses.size > 0) {
+          prefResponses = tempResponses;
+        }
+
+        document.getElementById("infopane").innerHTML = getList();
+      }
+
+      /**
+       * Constructs an HTML-formatted, unsorted list of all existent answers and their associated questions.
+       * Questions are keyed to the class "question" and responses to the class "response" for CSS
+       * formatting purposes.
+       * @returns {string} the formatted HTML list as a string
+       */
+      function getList() {
+        // build temporary Map of all questions and another of all answers
+        // assemble questions to answers in HTML unordered list form
+        let allQuestions = new Map();
+        let allResponses = new Map([...bioResponses, ...prefResponses]);
+
+        // Note: as bioQuestions and prefQuestions are objects with enumerable properties,
+        // we must use a for...in loop.  (variable in object)
+        for (const key in bioQuestions) {
+          allQuestions.set(key, bioQuestions[key]);
+        }
+        for (const key in prefQuestions) {
+          allQuestions.set(key, prefQuestions[key]);
+        }
+
+        // debug statements
+        //console.log(allQuestions);
+        //console.log(allResponses);
+
+        let listItems = []; // list of all HTML list items
+
+        // Note: as allResponses is an iterable object, we must use a for...of loop. (variable of iterable)
+        for (const key of allResponses.keys()) {
+          if (allQuestions.has(key)) {
+            listItems.push(addTags(allQuestions.get(key), "li", "question"));
+            listItems.push(addTags(allResponses.get(key), "li", "response"));
+          } else {
+            continue; // relevant question was not found for some reason, so skip adding
+          }
+        }
+
+        return addTags("".concat(...listItems), "ul");
+      }
+
+      /*
+        Long note for getList(). I struggled for a while to decide whether to build the Maps like I did,
+        or to use a different approach, which I'll write below.  I suspect this approach might have been
+        a bit more efficient, but a tiny bit less flexible in the event that we add even more distinct
+        sets of questions in the future.
+
+        for (const key of bioResponses) {
+            if (bioQuestions.hasOwnProperty(key)) {
+                listItems.push(addTags(bioQuestions[key], "li", "question"));
+                listItems.push(addTags(bioResponses.get(key), "li", "response"));
+            }
+            else {
+                continue; // relevant question was not found for some reason, so skip adding
+            }
+        }
+
+        for (const key of prefResponses) {
+            if(prefQuestions.hasOwnPropert(key)) {
+                listItems.push(addTags(prefQuestions[key], "li", "question"));
+                listItems.push(addTags(prefResponses.get(key), "li", "response"));
+            }
+            else {
+                continue; // relevant question was not found for some reason, so skip adding
+            }
+        }
+      */
+
+      /**
+       * Uses the prompt notification box to request a response to a question. If mustAnswer is true,
+       * will loop until a response other than an empty string is given by the user.  Returns
+       * a string with the user's response, or null if the question was not a string or the user did not respond.
+       * @param {string} questionStr - String representing the question to ask.
+       * @param {boolean} [mustAnswer=false] - Whether the question must be answered.
+       * @returns {(string|null)} A string containing the user's response, or null.
+       */
+      function promptQuestion(questionStr, mustAnswer) {
+        if (typeof questionStr === "string") {
+          let response = prompt(questionStr);
+
+          if (mustAnswer === true) {
+            while (response === null || response == "") {
+              response = prompt("A response is required.\n" + questionStr);
+            }
+          }
+
+          return response;
+        } else {
+          return null;
+        }
+      }
+
+      /**
+       * Outputs a string representing the inputString enclosed in the selected HTML tags.
+       * If className or idName are left null or empty, that attribute will be omitted.
+       * @param {string} content - Content to be enclosed within the tag
+       * @param {string} elementType - Type of tag (e.g. div, p, span)
+       * @param {string} [classSelector] - class name
+       * @param {string} [idSelector] - ID name
+       * @returns {string} A string containing the content enclosed in the tag type.
+       */
+      function addTags(content, elementType, classSelector, idSelector) {
+        let output = ["<" + elementType];
+
+        if (classSelector != null && classSelector.length > 0) {
+          output.push(" class='", classSelector, "'");
+        }
+
+        if (idSelector != null && idSelector.length > 0) {
+          output.push(" id='", idSelector, "'");
+        }
+
+        return "".concat(...output, ">", content, "</", elementType, ">");
+      }
+    </script>
+  </body>
+</html>
+```

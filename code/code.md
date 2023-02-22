@@ -1,6 +1,6 @@
 # Project Reference Guide
 
-This is a quick reference of all the projects and the functionality they contain.
+This is a quick reference of all the projects and the functionality they contain, in the hopes that it will be easier to find pages and code snippets later on.
 
 ---
 
@@ -82,7 +82,7 @@ Simple page with no frills that demonstrates ideal naming of setters and getter 
 
 ## Lab 05
 
-There will be a description here once it's done.
+Functionally the same as lab-02a, this lab put more focus on CSS positioning, with a side emphasis on making things look good. Due to struggles with CSS positioning, I chose to limit the page to 1000px wide in order to alleviate struggles with dynamic resizing. I also took the oppportunity to begin exploring objects and also used Maps, observing the differences in iterating through key-value pairings in for loops.
 
 - [Lab-05](/code/lab-05/lab-05.md)
 
@@ -95,3 +95,5 @@ Cycles colors, text, and uppercase/lowercase. Demonstrates programatic manipulat
 - [Lab-06](/code/lab-06/lab-06.md)
 
 ---
+
+- [Return to TechEd-201 ReadMe](/README.md)

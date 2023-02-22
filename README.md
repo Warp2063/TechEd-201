@@ -10,3 +10,5 @@ This repository contains my TechEd 201 Notes and Labs, as well as some minor per
 - [Class-04](/notes/class-04/class-04.md)
 - [Class-05](/notes/class-05/class-05.md)
 - [Class-06](/notes/class-06/class-06.md)
+
+- [Project Reference Guide](/code/code.md)

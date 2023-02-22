@@ -17,9 +17,6 @@
         margin: 25px;
       }
 
-      #titlename {
-      }
-
       #fancy {
         font-family: "Lucida Handwriting";
       }
@@ -118,7 +115,7 @@
         padding: auto;
         padding-left: 20px;
         padding-top: 70px;
-        max-width: 425px;
+        max-width: 430px;
       }
 
       #img2 {
@@ -199,9 +196,11 @@
       var bioResponses = new Map();
       var prefResponses = new Map();
 
-      tempsetup();
-
-      function tempsetup() {
+      /**
+       * Quickly populates the responses and updates the page;
+       * useful for rapidly-testing CSS adjustments.
+       */
+      function demosetup() {
         bioResponses.set("name", "Carla");
         bioResponses.set("age", "nope");
         bioResponses.set("birthplace", "Illinois");
@@ -211,16 +210,16 @@
         prefResponses.set("lang", "Japanese");
         prefResponses.set("vacation", "The Moon");
 
-        // if name was input, set document.title and titlename
-        if (bioResponses.has("name")) {
-          document.getElementById("titlename").innerText =
-            bioResponses.get("name");
-          document.title = bioResponses.get("name");
-        }
-
+        document.getElementById("titlename").innerText =
+          bioResponses.get("name");
+        document.title = bioResponses.get("name");
         document.getElementById("infopane").innerHTML = getList();
       }
 
+      /**
+       * Using prompts, queries the user for personal information (but does not require it).
+       * Updates the infopane with the questions/responses.
+       */
       function setBio() {
         // build temporary Map; only if answers are given do we add it to bioAnswers
         let tempResponses = new Map();
@@ -247,6 +246,10 @@
         document.getElementById("infopane").innerHTML = getList();
       }
 
+      /**
+       * Using prompts, queries the user for personal preferences (but does not require it).
+       * Updates the infopane with the questions/responses.
+       */
       function setPrefs() {
         // build temporary Map; only if answers are given do we add it to prefAnswers
         let tempResponses = new Map();
@@ -268,7 +271,7 @@
 
       /**
        * Constructs an HTML-formatted, unsorted list of all existent answers and their associated questions.
-       * Questions will be keyed to the class "question" and responses to the class "response" for CSS
+       * Questions are keyed to the class "question" and responses to the class "response" for CSS
        * formatting purposes.
        * @returns {string} the formatted HTML list as a string
        */
@@ -362,9 +365,9 @@
        * If className or idName are left null or empty, that attribute will be omitted.
        * @param {string} content - Content to be enclosed within the tag
        * @param {string} elementType - Type of tag (e.g. div, p, span)
-       * @param {string} classSelector -
-       * @param {string} idSelector
-       * @returns {string}
+       * @param {string} [classSelector] - class name
+       * @param {string} [idSelector] - ID name
+       * @returns {string} A string containing the content enclosed in the tag type.
        */
       function addTags(content, elementType, classSelector, idSelector) {
         let output = ["<" + elementType];

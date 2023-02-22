@@ -11,6 +11,8 @@
     - [Quick innerText test](./test.html)
   - There's also `textContent` which is a little different.
     - [textContent property](https://www.w3schools.com/jsref/prop_node_textcontent.asp)
+- Worked on lab-06 in class
+  - [Lab-06.md](/code/lab-06/lab-06.md)
 
 ---
 
