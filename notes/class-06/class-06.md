@@ -16,4 +16,15 @@
 
 ---
 
+## February 22, 2023
+
+- `document.createElement(semanticTag)` - creates an element for the DOM tree of the type, but does not place it
+  - `createElement("p")`
+  - `createElement("div")`
+  - `createElement("img")`
+  - `createElement("img2")` - error, but will essentially create a `p` element
+- `document.getElementById("name").appendChild(element)`
+
+---
+
 [Return to TechEd-201 ReadMe](/README.md)

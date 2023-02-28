@@ -8,7 +8,7 @@
 
 ## Version 1
 
-Fulfills all requirements, demonstrating programatic manipulation of the DOM via Javascript, inserting elements and adjusting both their text and CSS color styling upon each button click. Also demonstrates usage of both innerText and innerHTML.
+Fulfills all requirements, demonstrating programatic manipulation of the DOM via innerHTML in Javascript, inserting elements and adjusting both their text and CSS color styling upon each button click. Also demonstrates usage of both innerText and innerHTML.
 
 ```html
 <!DOCTYPE html>

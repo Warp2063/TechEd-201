@@ -76,7 +76,7 @@ Some CSS practice, trying to build a photo gallery webpage.
 
 Simple page with no frills that demonstrates ideal naming of setters and getter functions.
 
-- [Project-04](/code/lab-04/p04.html)
+- [Lab-04](/code/lab-04/p04.html)
 
 ---
 
@@ -90,9 +90,33 @@ Functionally the same as lab-02a, this lab put more focus on CSS positioning, wi
 
 ## Lab 06
 
-Cycles colors, text, and uppercase/lowercase. Demonstrates programatic manipulation of the DOM via Javascript, inserting elements and adjusting both their text and CSS color styling upon each button click. Also demonstrates usage of both innerText and innerHTML.
+Cycles colors, text, and uppercase/lowercase. Demonstrates programatic manipulation of the DOM via innerHTML in JavaScript, inserting elements and adjusting both their text and CSS color styling upon each button click. Also demonstrates usage of both innerText and innerHTML.
 
 - [Lab-06](/code/lab-06/lab-06.md)
+
+---
+
+## Table
+
+Just a quick demonstration of a table in HTML with some CSS styling.
+
+- [table.html](/code/table.html)
+
+---
+
+## Lab 07
+
+Uses DOM tree manipulation to add additional table rows when a user clicks a button, prompting inputs. Also did work on CSS Positioning to try to make a dynamically-resizeable page, with some success. Manually added pointer styling to CSS and event listeners for fun.
+
+- [Lab-07](/code/lab-07/lab-07.md)
+
+---
+
+## objectDemo
+
+Simple demonstration of an object with nested objects.
+
+- [objectDemo.html](/code/objectDemo.html)
 
 ---
 

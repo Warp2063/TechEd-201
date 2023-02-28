@@ -35,7 +35,7 @@
 
 ## Version 1
 
-Functionally the same as lab-02a, this lab put more focus on CSS positioning, with a side emphasis on making things look good. Due to struggles with CSS positioning, I chose to limit the page to 1000px wide in order to alleviate struggles with dynamic resizing. I also took the oppportunity to begin exploring objects and also used Maps, observing the differences in iterating through key-value pairings in for loops.
+Functionally the same as lab-02a, this lab put more focus on CSS positioning, with a side emphasis on making things look good. Due to struggles with CSS positioning, I chose to limit the page to 1000px wide in order to alleviate struggles with dynamic resizing. I also took the oppportunity to begin exploring objects and also used Maps, observing the differences in iterating through key-value pairings in for loops. Adjust the page title for fun based on name input.
 
 ```html
 <!DOCTYPE html>
