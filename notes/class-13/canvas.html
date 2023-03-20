@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    HTML Canvas
+  </head>
+
+  <body>
+    <h1>HTML Canvas</h1>
+    <canvas
+      id="drawArea"
+      style="
+        width: 200px;
+        height: 200 px;
+        padding: 10px;
+        border: 1px solid black;
+      "
+      >Can draw graphics here</canvas
+    >
+
+    <script>
+      const myCanvas = document.getElementById("drawArea");
+      const rectangleShape = graphics.getContext("2d");
+
+      rectangleShape.beginPath();
+      rectangleShape.lineWidth = "10";
+      rectangleShape.fillStyle = "pink";
+      rectangleShape.rect(0, 0, 100, 100); //x1, y1, x2, y2
+      rectangleShape.stroke(); // straight lines
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guessing Game With Form!</title>
+    <style>
+      body {
+        color: white;
+        background-color: black;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      .number {
+        color: skyblue;
+        font-family: monospace;
+      }
+
+      #minNum {
+        color: darkcyan;
+      }
+
+      #maxNum {
+        color: darkgreen;
+      }
+
+      #attemptsNum {
+        color: darkred;
+      }
+
+      #gameForm {
+        border: 1px solid white;
+      }
+
+      #setupForm {
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+
+  <!--
+        Improvement ideas:
+        - add an input box on the page instead of using prompt
+        - focus automatically goes to the input box on resetGame()
+        - pressing Enter in the box triggers makeGuess()
+        - change the box red as feedback for illegal input
+        - input box turns white on input change
+        - focus returns to input box on successful input
+        - disable input box on game end (either by correct guess or running out of guesses)
+    -->
+  <body>
+    <h1>Number Guessing Game!</h1>
+
+    <p id="outputField"></p>
+    <p id="testField"></p>
+    <button id="guessButton" onclick="makeGuess()">Make Guess</button>
+    <button id="resetButton" onclick="resetGame()">Reset</button>
+
+    <!-- Two forms, one for gameplay with guess number box, guess button, reset button-->
+    <form id="gameForm">
+      <label for="guessNum">Make Guess</label><br />
+      <input
+        type="number"
+        id="guessNum"
+        name="guessNum"
+        placeholder="num"
+        required />
+
+      <br />
+
+      <button type="submit" name="action" value="guess">Make Guess</button>
+
+      <br />
+
+      <button type="submit" name="action" value="reset">Reset Game</button>
+    </form>
+    <!-- Another form for settings, has largest, numGuess-->
+    <form id="setupForm">
+      <h2>Settings</h2>
+      <br />
+      <label for="maxGuess">Maximum Possible Number</label><br />
+      <input
+        type="number"
+        id="maxGuess"
+        name="maxGuess"
+        placeholder="num"
+        min="1"
+        required />
+
+      <br />
+
+      <label for="maxAttempts">Maximum Attempts</label><br />
+      <input
+        type="number"
+        id="maxAttempts"
+        name="maxAttempts"
+        placeholder="num"
+        min="1"
+        required />
+      <!-- note, we can't load the current value from the JS in the HTML, we'll
+             have to apply it from the JS side -->
+
+      <br />
+
+      <button type="submit" name="action" value="updateSettings">Save</button>
+    </form>
+
+    <script src="numGuessForm.js"></script>
+  </body>
+</html>

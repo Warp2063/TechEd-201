@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My CSS Animation</title>
+
+    <style>
+      #face {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: rgb(243, 243, 19);
+        border-radius: 200px;
+        border: 5px solid black;
+
+        animation-name: eyerollface;
+        animation-duration: 2s;
+      }
+
+      #eyel {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: calc(33% - 25px);
+        left: calc(33% - 25px);
+        background-color: black;
+        border-radius: 25px;
+
+        animation-name: eyeroll;
+        animation-duration: 2s;
+      }
+
+      #eyelshine {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        left: 10px;
+        background-color: white;
+        border-radius: 5px;
+
+        animation-name: eyerollshine;
+        animation-duration: 2s;
+      }
+
+      #eyer {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: calc(33% - 25px);
+        left: calc(66% - 25px);
+        background-color: black;
+        border-radius: 25px;
+
+        animation-name: eyeroll;
+        animation-duration: 2s;
+      }
+
+      #eyershine {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        left: 10px;
+        background-color: white;
+        border-radius: 5px;
+
+        animation-name: eyerollshine;
+        animation-duration: 2s;
+      }
+
+      #mouth {
+        position: absolute;
+        width: 200px;
+        height: 10px;
+        top: 66%;
+        left: 25%;
+        background-color: black;
+
+        animation-name: eyerollmouth;
+        animation-duration: 2s;
+      }
+
+      /* Template */
+      @keyframes eyeroll {
+        0% {
+        }
+
+        25% {
+          transform: translateX(-20px);
+        }
+
+        50% {
+          transform: translatey(-20px);
+        }
+
+        75% {
+          transform: translateX(20px);
+        }
+
+        100% {
+        }
+      }
+
+      @keyframes eyerollshine {
+        0% {
+        }
+
+        25% {
+          transform: translateX(-5px);
+        }
+
+        50% {
+          transform: translatey(-5px);
+        }
+
+        75% {
+          transform: translateX(5px);
+        }
+
+        100% {
+        }
+      }
+
+      @keyframes eyerollmouth {
+        0% {
+        }
+
+        25% {
+        }
+
+        50% {
+          transform: translatey(-15px);
+        }
+
+        75% {
+        }
+
+        100% {
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Animations</h1>
+
+    <div id="face">
+      <div id="eyel">
+        <div id="eyelshine"></div>
+      </div>
+      <div id="eyer">
+        <div id="eyershine"></div>
+      </div>
+      <div id="mouth"></div>
+    </div>
+  </body>
+</html>

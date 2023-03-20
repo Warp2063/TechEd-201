@@ -1,22 +1,3 @@
-# Lab 07
-
-## Task
-
-Evolving from [Lab-05](/code/lab-05/lab-05.md)
-
-Also, improve on the responsiveness of the page when it's resized.
-
-1. When a button is clicked we should get four prompts -> city, min-customers, max-customers, cookies-sold
-2. Now this data should be displayed in the table
-3. The table should contain four columns -> city, min-customers, max-customers, cookies-sold.
-
-## Additional Features
-
-I add the CSS pointer property to each City name, and also add an event listener for it for when it's clicked, bringing up an alert with information pulled from that row of the table.
-
-## Version 1
-
-```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,31 +57,41 @@ I add the CSS pointer property to each City name, and also add an event listener
         position: relative;
         top: 100px;
         left: 0px;
-        bottom: 30px;
-        min-width: fit-content;
-        width: 100%;
-        max-width: calc(100% - 80px);
-        height: fit-content;
+        min-width: 600px;
+        max-width: calc(100% + 16px);
         min-height: 500px;
-        background-color: #8ecae6;
-        text-align: center;
-        padding: 0px;
-        padding-left: 150px;
-        padding-right: 0px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: stretch;
+        row-gap: 0px;
+        order: 2;
         margin: -10px;
+        border: 1px solid red;
       }
 
       #side {
-        position: absolute;
-        float: left;
-        top: 0px;
-        left: 0px;
-        width: 149px;
+        min-width: 149px;
+        max-width: 100%;
         height: 100%;
         min-height: 500px;
         background-color: #219ebc;
         border-right: 1px solid #023047;
-        margin: 0px;
+        order: 1;
+      }
+
+      /* Media width override; for narrow displays move sidebar above main content */
+      @media (min-width: 300px) {
+        #main {
+          flex-flow: column nowrap;
+        }
+
+        #side {
+          min-width: auto;
+          max-width: auto;
+          height: 100px;
+        }
       }
 
       button {
@@ -116,13 +107,13 @@ I add the CSS pointer property to each City name, and also add an event listener
       }
 
       #mainContent {
-        position: relative;
-        height: fit-content;
-        width: calc(100% - 100px);
+        flex-grow: 500;
         padding: 25px;
         border: 1px solid black;
         text-align: center;
         justify-content: center;
+        background-color: #8ecae6;
+        order: 2;
       }
 
       #footer {
@@ -150,6 +141,10 @@ I add the CSS pointer property to each City name, and also add an event listener
 
   <body>
     <div id="main">
+      <div id="side">
+        <button onclick="createClicked()">Create</button>
+      </div>
+
       <div id="mainContent">
         Cities:
         <br />
@@ -162,10 +157,6 @@ I add the CSS pointer property to each City name, and also add an event listener
           </tr>
         </table>
       </div>
-
-      <div id="side">
-        <button onclick="createClicked()">Create</button>
-      </div>
     </div>
 
     <div id="footer">Copyright by &lt;Your Name&gt;</div>
@@ -173,7 +164,10 @@ I add the CSS pointer property to each City name, and also add an event listener
     <div id="header" onclick="loremipsum()">
       <div id="title">Salmon Cookies</div>
 
-      <img id="headerImg" src="salmoncookie.jpeg" alt="salmon cookie image" />
+      <img
+        id="headerImg"
+        src="/code/lab-07/salmoncookie.jpeg"
+        alt="salmon cookie image" />
     </div>
 
     <script>
@@ -289,4 +283,3 @@ I add the CSS pointer property to each City name, and also add an event listener
     </script>
   </body>
 </html>
-```

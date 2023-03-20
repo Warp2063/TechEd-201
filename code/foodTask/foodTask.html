@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Task</title>
+    <style>
+      body {
+        background-color: rgb(143, 199, 255);
+        display: flex;
+        flex-direction: column;
+      }
+
+      #foodForm {
+        border: 1px solid black;
+        padding: 3px;
+        margin: 3px;
+        display: flex;
+        justify-content: space-around;
+
+        border-radius: 3px;
+      }
+
+      #foodForm input {
+        border-bottom-right-radius: 20px;
+      }
+
+      .food {
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        padding: 3px;
+      }
+
+      #foods {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        min-height: 40px;
+        border-radius: 10px;
+      }
+
+      #foods ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 3px;
+      }
+
+      #foods ul li {
+        padding: 3px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <!-- 
+        1. Create a form in the frontend.
+        2. Input the data -> foodType, foodName, foodQuantity
+        3. Store the data in a class
+        4. Show the data information to the frontend using DOM manipulation.
+    -->
+  <body>
+    <form id="foodForm">
+      <input
+        type="text"
+        id="nationality"
+        name="nationality"
+        placeholder="nationality"
+        required />
+
+      <input
+        type="text"
+        id="foodName"
+        name="foodName"
+        placeholder="food name"
+        required />
+
+      <input
+        type="number"
+        id="qty"
+        id="qty"
+        value="1"
+        min="1"
+        size="4"
+        required />
+
+      <button type="submit" name="action" value="addFood">Add Food</button>
+    </form>
+
+    <div id="foods"></div>
+
+    <script src="foodTask.js"></script>
+  </body>
+</html>

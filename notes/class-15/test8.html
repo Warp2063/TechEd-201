@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test 8</title>
+
+    <style>
+      cite {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      let dog = {
+        breed: "Beagle",
+        weight: 30,
+        group: "Hound",
+      };
+      let key = "weight";
+
+      console.log(dog[key] === 30);
+      console.log(dog["weight"] == "30");
+      console.log("weight" in dog);
+      console.log(dog.weight);
+      console.log(dog.key === 30);
+      console.log(dog.hasOwnProperty("weight"));
+    </script>
+  </body>
+</html>

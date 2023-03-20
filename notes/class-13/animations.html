@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Animations</title>
+
+    <style>
+      #box {
+        border: 1 px solid black;
+        width: 50%;
+        height: 100px;
+        text-align: center;
+        background-color: lightcoral;
+        color: white;
+        font-family: monospace;
+        font-size: larger;
+        animation-name: thing;
+        animation-duration: 2s;
+      }
+
+      /* Template */
+      @keyframes thing {
+        0% {
+          background-color: red;
+        }
+
+        50% {
+          background-color: yellow;
+        }
+
+        100% {
+          background-color: lightyellow;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Animations</h1>
+
+    <div id="box">This is a treasure box</div>
+  </body>
+</html>

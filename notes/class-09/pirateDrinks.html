@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pirates and Their Preferred Potables</title>
+
+    <style>
+      .question {
+        color: blue;
+      }
+
+      .answer {
+        color: red;
+      }
+
+      .pirate {
+        list-style-type: none;
+        border: 1px solid gray;
+        padding: 0px;
+      }
+
+      .pirateQR {
+        border: 1px solid gray;
+        padding: 2px;
+        margin: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Pirates and Their Preferred Potables</h1>
+    <button onclick="addPirate()">Click to Set</button>
+    <br />
+    <div id="Pirates"></div>
+
+    <script>
+      const questions = [
+        "Pirate Name",
+        "Preferred Potable 1",
+        "Preferred Potable 2",
+      ];
+
+      const pirateQuestions = {
+        name: "Pirate Name",
+        drink1: "Preferred Potable 1",
+        drink2: "Preferred Potable 2",
+      };
+
+      function addPirate() {
+        let piratesElement = document.getElementById("Pirates");
+        let pirateInfo = document.createElement("ul");
+        pirateInfo.classList.add("pirate");
+        let pirate = {};
+
+        for (const key in pirateQuestions) {
+          pirate[key] = prompt(pirateQuestions[key] + "?");
+          let liElement = document.createElement("li");
+          liElement.classList.add("pirateQR");
+          liElement.innerHTML = `<span class="question">${pirateQuestions[key]}:</span> <span class="answer">${pirate[key]}</span>`;
+          pirateInfo.appendChild(liElement);
+        }
+
+        /*
+        for (var i = 0; i < questions.length; i++) {
+          let answer = prompt(questions[i]);
+          let liElement = document.createElement("li");
+          liElement.classList.add("pirateqr");
+          liElement.innerHTML = `<span class="question">${questions[i]}:</span> <span class="answer">${answer}</span>`;
+          pirateInfo.appendChild(liElement);
+        }
+        */
+
+        piratesElement.appendChild(pirateInfo);
+      }
+    </script>
+  </body>
+</html>

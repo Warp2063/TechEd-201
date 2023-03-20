@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LocalStorage Example</title>
+  </head>
+
+  <body>
+    <form onsubmit="processForm()">
+      <input type="text" name="name" placeholder="Enter name" required />
+      <br />
+      <input type="text" name="favColor" placeholder="Favorite Color" />
+      <br />
+
+      <button type="submit" name="actionButton" value="save">Save</button>
+      <button type="button" name="actionButton" value="load">Load</button>
+    </form>
+
+    <p id="outputText"></p>
+
+    <script>
+      "use strict";
+
+      let outTextP = document.getElementById("outputText");
+
+      function processForm() {
+        event.preventDefault();
+
+        let form = event.currentTarget;
+
+        console.log(form);
+        console.table(form);
+
+        let name = form.name.value;
+
+        console.log("entered name: " + name);
+
+        let action = form.actionButton.value.toLowerCase();
+
+        console.log("Button pressed? " + form.actionButton);
+        console.table(form.actionButton);
+
+        console.log("Button pressed action: " + action);
+
+        if (action == "save") {
+          console.log("save clicked");
+          let favColor = form.favColor.value;
+          localStorage.setItem(name.toLowerCase(), favColor);
+
+          outTextP.innerText = `Saved ${name}, ${favColor}.`;
+        } else if (action == "load") {
+          console.log("load clicked");
+          // need to be case insensitive
+          let favColor = localStorage.getItem(name.toLowerCase());
+          outTextP.innerText = `${name}'s favorite color is ${favColor}.`;
+        } else {
+          console.log("form submitted without an action?!");
+        }
+      }
+    </script>
+  </body>
+</html>

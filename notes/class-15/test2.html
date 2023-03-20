@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test 2</title>
+  </head>
+
+  <body>
+    <script>
+      function Graph() {
+        this.nodes = [];
+        this.edges = [];
+      }
+
+      Graph.prototype.addNodes = function (n) {
+        this.nodes.push(n);
+      };
+
+      Graph.prototype.addEdges = function (n) {
+        this.edges.push(n);
+      };
+
+      let graphObj = new Graph();
+
+      /*
+        The variable graphObj has no methods, and only has access tot he nodes and edges arrays.
+      */
+    </script>
+  </body>
+</html>

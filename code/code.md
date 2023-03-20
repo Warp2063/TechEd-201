@@ -114,7 +114,7 @@ Uses DOM tree manipulation to add additional table rows when a user clicks a but
 
 ## objectDemo
 
-Simple demonstration of an object with nested objects.
+Simple demonstration of an object with nested objects. The object is called `userPunch`, a demonstration of a time punchcard. Nothing is rendered in the browser. Use `console.table(userPunch)` in the console to view it in a useful way.
 
 - [objectDemo.html](/code/objectDemo.html)
 
